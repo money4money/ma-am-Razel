@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Room 8 Chronicles — Ma'am Razel</title>
+  
+  <!-- Enhanced: Added Google Fonts for better typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Enhanced: Font Awesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <style>
+    /* Enhanced: Modern CSS Custom Properties with expanded color palette */
+    :root {
+      --bg-primary: #fafafb;
+      --bg-secondary: #ffffff;
+      --bg-tertiary: #f8fafc;
+      --text-primary: #1a202c;
+      --text-secondary: #4a5568;
+      --text-muted: #718096;
+      --accent-primary: #667eea;
+      --accent-secondary: #764ba2;
+      --accent-success: #48bb78;
+      --accent-warning: #ed8936;
+      --border-light: #e2e8f0;
+      --border-medium: #cbd5e0;
+      --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Enhanced: Dark mode with better contrast ratios */
+    [data-theme="dark"] {
+      --bg-primary: #0f0f23;
+      --bg-secondary: #1a1a2e;
+      --bg-tertiary: #16213e;
+      --text-primary: #f7fafc;
+      --text-secondary: #e2e8f0;
+      --text-muted: #a0aec0;
+      --accent-primary: #81e6d9;
+      --accent-secondary: #b794f6;
+      --border-light: #2d3748;
+      --border-medium: #4a5568;
+      --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Enhanced: Modern reset and base styles */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; /* Enhanced: Better font stack */
+      font-size: 16px;
+      line-height: 1.6;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      transition: var(--transition);
+      overflow-x: hidden; /* Enhanced: Prevent horizontal scroll */
+    }
+
+    /* Enhanced: Improved header with glassmorphism effect */
+    header.header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px); /* Enhanced: Glassmorphism */
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-light);
+      color: var(--text-primary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      transition: var(--transition);
+    }
+
+    [data-theme="dark"] header.header {
+      background: rgba(26, 26, 46, 0.95);
+      border-bottom-color: var(--border-light);
+    }
+
+    /* Enhanced: Animated header title */
+    .header h1 {
+      margin: 0;
+      font-size: 1.75rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Enhanced: Animated subtitle with typing cursor */
+    #site-sub {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+      margin-top: 0.25rem;
+      min-height: 1.2em; /* Enhanced: Prevent layout jump */
+    }
+
+    /* Enhanced: Interactive header actions */
+    .header-actions {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .header-actions button {
+      font-size: 1.2rem;
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      cursor: pointer;
+      padding: 0.75rem;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .header-actions button:hover {
+      background: var(--bg-tertiary);
+      color: var(--accent-primary);
+      transform: translateY(-1px); /* Enhanced: Subtle hover animation */
+    }
+
+    /* Enhanced: Modern navigation with smooth animations */
+    .nav {
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border-light);
+      transition: var(--transition);
+      overflow: hidden;
+    }
+
+    .nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 1rem 2rem;
+      gap: 0.5rem;
+    }
+
+    .nav ul li a {
+      display: block;
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-weight: 500;
+      padding: 0.75rem 1.25rem;
+      border-radius: var(--radius-md);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nav ul li a:hover {
+      color: var(--accent-primary);
+      background: var(--bg-tertiary);
+      transform: translateY(-1px);
+    }
+
+    .nav ul li a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .nav ul li a:hover::before {
+      left: 100%;
+    }
+
+    /* Enhanced: Modern main content layout */
+    main {
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Enhanced: Beautiful section cards with modern shadows */
+    .section {
+      background: var(--bg-secondary);
+      margin-bottom: 3rem;
+      padding: 2.5rem;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .section:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .section:hover::before {
+      opacity: 1;
+    }
+
+    .section h2 {
+      margin: 0 0 1.5rem 0;
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      position: relative;
+    }
+
+    /* Enhanced: Improved tables with modern styling */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    th, td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    th {
+      background: var(--bg-tertiary);
+      font-weight: 600;
+      color: var(--text-primary);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    tr:hover {
+      background: var(--bg-tertiary);
+    }
+
+    /* Enhanced: Interactive resource controls */
+    .res-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: var(--bg-tertiary);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-light);
+    }
+
+    .res-controls input,
+    .res-controls select {
+      padding: 0.875rem 1.125rem;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      transition: var(--transition);
+      min-width: 200px;
+    }
+
+    .res-controls input:focus,
+    .res-controls select:focus {
+      outline: none;
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    /* Enhanced: Category buttons with active states */
+    .res-cats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .res-cats .cat {
+      padding: 0.75rem 1.5rem;
+      border: 2px solid var(--border-medium);
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .res-cats .cat:hover {
+      border-color: var(--accent-primary);
+      color: var(--accent-primary);
+      transform: translateY(-1px);
+    }
+
+    .res-cats .cat.active {
+      background: var(--accent-primary);
+      color: white;
+      border-color: var(--accent-primary);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Enhanced: Beautiful resource grid */
+    .res-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .res-card {
+      background: var(--bg-secondary);
+      padding: 2rem;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .res-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    }
+
+    .res-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .res-card h3 {
+      margin: 0 0 1rem 0;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .res-meta {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    .res-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .res-tag {
+      background: var(--bg-tertiary);
+      color: var(--text-secondary);
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      font-weight: 500;
+      border: 1px solid var(--border-light);
+    }
+
+    .res-actions {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .res-actions a {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+      transition: var(--transition);
+      font-size: 0.9rem;
+    }
+
+    .res-actions a:first-child {
+      background: var(--accent-primary);
+      color: white;
+    }
+
+    .res-actions a:first-child:hover {
+      background: var(--accent-secondary);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .res-actions a:not(:first-child) {
+      background: var(--bg-tertiary);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-medium);
+    }
+
+    .res-actions a:not(:first-child):hover {
+      background: var(--bg-primary);
+      color: var(--accent-primary);
+      border-color: var(--accent-primary);
+    }
+
+    /* Enhanced: Gallery section with image placeholders */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .gallery-item {
+      aspect-ratio: 4/3;
+      background: var(--bg-tertiary);
+      border-radius: var(--radius-md);
+      border: 2px dashed var(--border-medium);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-item:hover {
+      border-color: var(--accent-primary);
+      color: var(--accent-primary);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+    }
+
+    .gallery-item .placeholder {
+      text-align: center;
+    }
+
+    .gallery-item .placeholder i {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Enhanced: Footer with modern styling */
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-light);
+      color: var(--text-muted);
+      margin-top: 4rem;
+    }
+
+    /* Enhanced: Responsive design improvements */
+    @media (max-width: 768px) {
+      .header {
+        padding: 1rem 1.5rem;
+      }
+      
+      .header h1 {
+        font-size: 1.5rem;
+      }
+      
+      .nav ul {
+        flex-direction: column;
+        padding: 1rem 1.5rem;
+      }
+      
+      .nav ul li a {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+      
+      main {
+        padding: 2rem 1.5rem;
+      }
+      
+      .section {
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      
+      .res-controls {
+        flex-direction: column;
+      }
+      
+      .res-controls input,
+      .res-controls select {
+        min-width: 100%;
+      }
+      
+      .res-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Enhanced: Smooth scroll behavior */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Enhanced: Focus styles for accessibility */
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible,
+    select:focus-visible {
+      outline: 2px solid var(--accent-primary);
+      outline-offset: 2px;
+    }
+
+    /* Enhanced: Loading animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .section {
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    /* Enhanced: Typing cursor animation */
+    .typing-cursor {
+      display: inline-block;
+      background-color: var(--accent-primary);
+      width: 2px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+  </style>
+</head>
+
+<body data-theme="light">
+
+  <!-- Enhanced: Header with improved styling -->
+  <header class="header">
+    <div>
+      <h1>Room 8 Chronicles</h1>
+      <div id="site-sub">Ma'am Razel — Grade 8 Social Studies</div>
+    </div>
+
+    <div class="header-actions">
+      <!-- Enhanced: Better theme toggle icon -->
+      <button id="toggleMode" title="Toggle theme">
+        <i class="fas fa-moon" id="themeIcon"></i>
+      </button>
+      <button id="menuToggle" class="menu-toggle" title="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Enhanced: Navigation with improved UX -->
+  <nav class="nav" id="mainNav">
+    <ul>
+      <li><a href="#about"><i class="fas fa-user"></i> About Me</a></li>
+      <li><a href="#timeline"><i class="fas fa-clock"></i> Timeline</a></li>
+      <li><a href="#schedule"><i class="fas fa-calendar"></i> My Schedule</a></li>
+      <li><a href="#phoenix"><i class="fas fa-graduation-cap"></i> Class Phoenix</a></li>
+      <li><a href="#gallery"><i class="fas fa-images"></i> Gallery</a></li>
+      <li><a href="#resources"><i class="fas fa-book"></i> Learning Resources</a></li>
+      <li><a href="#resources-aral"><i class="fas fa-book-reader"></i> ARAL Resources</a></li>
+      <li><a href="#textbooks"><i class="fas fa-bookmark"></i> Textbooks</a></li>
+      <li><a href="#development"><i class="fas fa-chart-line"></i> Professional Development</a></li>
+      <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Enhanced: About section with better content presentation -->
+    <section id="about" class="section">
+      <h2><i class="fas fa-user-circle"></i> About Me</h2>
+      <p>Hello! I'm Ma'am Razel, a passionate Social Studies teacher at San Miguel National High School in Leyte. For the past 7 years, I've been teaching Grade 8 Araling Panlipunan, helping students explore Philippine history, government, economics, and our country's role in the world.</p>
+      <p>I believe Social Studies is not just memorizing facts — it's learning how to connect the past with the present. I aim to make lessons engaging, relevant, and full of heart.</p>
+      <p>I create a classroom where students feel heard, respected, and inspired to learn. Teaching is my vocation.</p>
+    </section>
+
+    <!-- Enhanced: Timeline with better visual presentation -->
+    <section id="timeline" class="section">
+      <h2><i class="fas fa-history"></i> My Teaching Timeline</h2>
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin: 1rem 0; padding: 1rem; background: var(--bg-tertiary); border-radius: var(--radius-sm); border-left: 4px solid var(--accent-primary);"><strong>2018</strong> – Started teaching at SMNHS</li>
+        <li style="margin: 1rem 0; padding: 1rem; background: var(--bg-tertiary); border-radius: var(--radius-sm); border-left: 4px solid var(--accent-primary);"><strong>2019</strong> – Mentored 3 student achievers</li>
+        <li style="margin: 1rem 0; padding: 1rem; background: var(--bg-tertiary); border-radius: var(--radius-sm); border-left: 4px solid var(--accent-primary);"><strong>2020</strong> – Shifted to remote learning during pandemic</li>
+        <li style="margin: 1rem 0; padding: 1rem; background: var(--bg-tertiary); border-radius: var(--radius-sm); border-left: 4px solid var(--accent-primary);"><strong>2024</strong> – Started classroom teacher adviser</li>
+        <li style="margin: 1rem 0; padding: 1rem; background: var(--bg-tertiary); border-radius: var(--radius-sm); border-left: 4px solid var(--accent-primary);"><strong>2025</strong> – Classroom projects and improvements</li>
+      </ul>
+    </section>
+
+    <!-- Enhanced: Schedule with improved table styling -->
+    <section id="schedule" class="section">
+      <h2><i class="fas fa-calendar-alt"></i> My Schedule SY 2025–2026</h2>
+      <table>
+        <tr><th>Day</th><th>Subject</th><th>Time</th><th>Section</th></tr>
+        <tr><td>Mon–Fri</td><td>AP</td><td>8:00–8:45</td><td>Phoenix</td></tr>
+        <tr><td>Mon–Fri</td><td>AP</td><td>8:45–9:30</td><td>Sparrow</td></tr>
+        <tr><td>Mon–Fri</td><td>AP</td><td>11:15–12:00</td><td>Eagle</td></tr>
+        <tr><td>Mon–Fri</td><td>AP</td><td>1:00–1:45</td><td>Flamingo</td></tr>
+        <tr><td>Mon–Fri</td><td>ESP</td><td>1:45–2:30</td><td>Phoenix</td></tr>
+        <tr><td>Mon–Fri</td><td>ARAL</td><td>3:15–4:15</td><td>Sparrow</td></tr>
+      </table>
+      <p><strong>Class & consultation hours:</strong> 10:30–11:00 AM. Contact via social media: <a href="https://www.instagram.com/magicwind888" target="_blank">@magicwind888</a></p>
+    </section>
+
+    <!-- Phoenix section remains the same -->
+    <section id="phoenix" class="section">
+      <h2><i class="fas fa-graduation-cap"></i> Class Phoenix Schedule SY 2025–2026</h2>
+      <table>
+        <tr><th>Day</th><th>Subject</th><th>Time</th><th>Teacher</th></tr>
+        <tr><td>Mon–Fri</td><td>AP</td><td>8:00–8:45</td><td>Ma'am Razel</td></tr>
+        <tr><td>Mon–Fri</td><td>MAPEH</td><td>8:45–9:30</td><td>Ma'am Angel</td></tr>
+        <tr><td>Mon–Fri</td><td>Aral Math</td><td>9:45–10:30</td><td>Sir AJ</td></tr>
+        <tr><td>Mon–Fri</td><td>English</td><td>10:30–11:15</td><td>Ma'am Rose</td></tr>
+        <tr><td>Mon–Fri</td><td>Math</td><td>11:15–12:00</td><td>Ma'am Melissa</td></tr>
+        <tr><td>Mon–Fri</td><td>Filipino</td><td>1:00–1:45</td><td>Ma'am Rhea</td></tr>
+        <tr><td>Mon–Fri</td><td>ESP</td><td>1:45–2:30</td><td>Ma'am Razel</td></tr>
+        <tr><td>Mon–Fri</td><td>Science</td><td>2:30–3:15</td><td>Ma'am Rhoda</td></tr>
+        <tr><td>Mon–Fri</td><td>TLE</td><td>3:15–4:00</td><td>Sir Mach</td></tr>
+      </table>
+    </section>
+
+    <!-- Enhanced: Gallery section with image examples -->
+    <section id="gallery" class="section">
+      <h2><i class="fas fa-camera"></i> Classroom Gallery</h2>
+      <p>Capturing moments from our learning journey together.</p>
+      
+      <div class="gallery-grid">
+        <!-- Enhanced: Example image placeholders with instructions -->
+        <div class="gallery-item">
+          <!-- Replace the div below with: <img src="images/classroom-photo-1.jpg" alt="Classroom environment"> -->
+          <div class="placeholder">
+            <i class="fas fa-image"></i>
+            <p>Classroom Environment</p>
+            <small>Add: images/classroom-1.jpg</small>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <!-- Replace with: <img src="images/students-activity.jpg" alt="Students during activity"> -->
+          <div class="placeholder">
+            <i class="fas fa-users"></i>
+            <p>Student Activities</p>
+            <small>Add: images/students-1.jpg</small>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <!-- Replace with: <img src="images/teacher-moment.jpg" alt="Teaching moment"> -->
+          <div class="placeholder">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <p>Teaching Moments</p>
+            <small>Add: images/teaching-1.jpg</small>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <!-- Replace with: <img src="images/student-work.jpg" alt="Student work display"> -->
+          <div class="placeholder">
+            <i class="fas fa-award"></i>
+            <p>Student Achievements</p>
+            <small>Add: images/achievements-1.jpg</small>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Enhanced: Image upload instructions -->
+      <div style="margin-top: 2rem; padding: 1.5rem; background: var(--bg-tertiary); border-radius: var(--radius-md); border-left: 4px solid var(--accent-warning);">
+        <h4><i class="fas fa-info-circle"></i> How to Add Images:</h4>
+        <ol>
+          <li>Create an <code>images/</code> folder in your GitHub repository</li>
+          <li>Upload your .jpg/.png files to this folder</li>
+          <li>Commit and push: <code>git add images/ && git commit -m "Add images" && git push</code></li>
+          <li>Replace the placeholder divs above with <code>&lt;img src="images/yourfile.jpg" alt="description"&gt;</code></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Resources sections remain largely the same with enhanced styling -->
+    <section id="resources" class="section">
+      <h2><i class="fas fa-book-open"></i> Learning Resources</h2>
+      <p>Slides, worksheets, activities, and helpful tools for students. Use the ARAL section below for program-specific materials.</p>
+    </section>
+
+    <!-- Enhanced: ARAL resources with improved functionality -->
+    <section id="resources-aral" class="section">
+      <h2><i class="fas fa-book-reader"></i> Learning Resources — ARAL Reading Program</h2>
+
+      <div class="res-controls">
+        <input id="resSearch" type="text" placeholder="🔍 Search title or keywords…" aria-label="Search resources">
+        <select id="resType" aria-label="Filter by type">
+          <option value="all">📚 All types</option>
+          <option value="passage">📖 Passages</option>
+          <option value="worksheet">📝 Worksheets</option>
+          <option value="slides">🎯 Slides</option>
+          <option value="audio">🎵 Audio</option>
+        </select>
+        <select id="resLevel" aria-label="Filter by level">
+          <option value="all">🎓 All levels</option>
+          <option value="beginner">🟢 Beginner</option>
+          <option value="intermediate">🟡 Intermediate</option>
+          <option value="advanced">🔴 Advanced</option>
+        </select>
+      </div>
+
+      <div class="res-cats" id="resCats">
+        <button data-cat="all" class="cat active">All</button>
+        <button data-cat="passages" class="cat">Passages</button>
+        <button data-cat="worksheets" class="cat">Worksheets</button>
+        <button data-cat="slides" class="cat">Slides</button>
+        <button data-cat="audio" class="cat">Audio</button>
+      </div>
+
+      <div id="resGrid" class="res-grid">
+        <noscript>
+          <div style="padding: 2rem; text-align: center; color: var(--text-muted);">
+            <p>JavaScript is required for the interactive resource browser.</p>
+            <ul style="text-align: left; max-width: 400px; margin: 0 auto;">
+              <li><a href="resources/aral/passages/aral-passage-01.pdf" target="_blank">ARAL Passage 01 (PDF)</a></li>
+              <li><a href="resources/aral/worksheets/aral-worksheet-01.pdf" target="_blank">ARAL Worksheet 01 (PDF)</a></li>
+            </ul>
+          </div>
+        </noscript>
+      </div>
+    </section>
+
+    <!-- Enhanced: Textbooks section -->
+    <section id="textbooks" class="section">
+      <h2><i class="fas fa-bookmark"></i> Textbooks</h2>
+      <p>Digital and suggested textbooks available for download or preview.</p>
+      
+      <div class="res-grid">
+        <div class="res-card">
+          <h3>Grade 8 Araling Panlipunan</h3>
+          <div class="res-meta">Department of Education • Official Textbook</div>
+          <div class="res-tags">
+            <span class="res-tag">Core Subject</span>
+            <span class="res-tag">DepEd Approved</span>
+          </div>
+          <div class="res-actions">
+            <a href="#" onclick="alert('Add your textbook PDF link here')">📖 View Online</a>
+            <a href="#" onclick="alert('Add download link here')">⬇️ Download</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enhanced: Professional Development section -->
+    <section id="development" class="section">
+      <h2><i class="fas fa-chart-line"></i> Professional Development</h2>
+      <p>Trainings, certificates, and short notes from courses I attended.</p>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+        <div style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: var(--radius-md); border-left: 4px solid var(--accent-success);">
+          <h4>📜 Teaching Certifications</h4>
+          <p>Professional development courses and certifications completed.</p>
+        </div>
+        <div style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: var(--radius-md); border-left: 4px solid var(--accent-warning);">
+          <h4>🎯 Workshops Attended</h4>
+          <p>Educational workshops and training seminars.</p>
+        </div>
+        <div style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: var(--radius-md); border-left: 4px solid var(--accent-primary);">
+          <h4>📚 Continuous Learning</h4>
+          <p>Ongoing professional development and learning resources.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enhanced: Contact section -->
+    <section id="contact" class="section">
+      <h2><i class="fas fa-envelope"></i> Contact</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 1.5rem;">
+        <div style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: var(--radius-md); text-align: center;">
+          <i class="fas fa-envelope" style="font-size: 2rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
+          <h4>Email</h4>
+          <a href="mailto:razelann.anover@deped.gov.ph" style="color: var(--accent-primary); text-decoration: none;">razelann.anover@deped.gov.ph</a>
+        </div>
+        <div style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: var(--radius-md); text-align: center;">
+          <i class="fab fa-linkedin" style="font-size: 2rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
+          <h4>LinkedIn</h4>
+          <a href="https://www.linkedin.com/in/magicwind888" target="_blank" style="color: var(--accent-primary); text-decoration: none;">View Profile</a>
+        </div>
+        <div style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: var(--radius-md); text-align: center;">
+          <i class="fab fa-instagram" style="font-size: 2rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
+          <h4>Instagram</h4>
+          <a href="https://www.instagram.com/magicwind888" target="_blank" style="color: var(--accent-primary); text-decoration: none;">@magicwind888</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Enhanced: Footer with additional information -->
+  <footer>
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: left; margin-bottom: 2rem;">
+        <div>
+          <h4 style="color: var(--text-primary); margin-bottom: 1rem;">Room 8 Chronicles</h4>
+          <p>Dedicated to creating meaningful learning experiences in Social Studies education.</p>
+        </div>
+        <div>
+          <h4 style="color: var(--text-primary); margin-bottom: 1rem;">Quick Links</h4>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="#about" style="color: var(--text-muted); text-decoration: none;">About</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="#resources" style="color: var(--text-muted); text-decoration: none;">Resources</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="#contact" style="color: var(--text-muted); text-decoration: none;">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: var(--text-primary); margin-bottom: 1rem;">School</h4>
+          <p>San Miguel National High School<br>Leyte, Philippines</p>
+        </div>
+      </div>
+      <div style="text-align: center; padding-top: 2rem; border-top: 1px solid var(--border-light);">
+        <p>&copy; 2025 Ma'am Razel | All rights reserved. | Made with ❤️ for education</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Enhanced: JavaScript with improved functionality -->
+  <script>
+    // Enhanced: Improved menu toggle with smooth animations
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+    
+    menuToggle && menuToggle.addEventListener('click', () => {
+      const icon = menuToggle.querySelector('i');
+      if (mainNav.style.maxHeight && mainNav.style.maxHeight !== '0px') {
+        mainNav.style.maxHeight = '0px';
+        mainNav.style.opacity = '0';
+        icon.className = 'fas fa-bars'; // Enhanced: Icon changes
+      } else {
+        mainNav.style.maxHeight = mainNav.scrollHeight + 'px';
+        mainNav.style.opacity = '1';
+        icon.className = 'fas fa-times'; // Enhanced: Icon changes
+      }
+    });
+
+    // Enhanced: Responsive navigation with better UX
+    function resetNav() {
+      const icon = menuToggle.querySelector('i');
+      if (window.innerWidth <= 768) {
+        mainNav.style.overflow = 'hidden';
+        mainNav.style.transition = 'all 0.3s ease';
+        mainNav.style.maxHeight = '0px';
+        mainNav.style.opacity = '0';
+        icon.className = 'fas fa-bars';
+      } else {
+        mainNav.style.maxHeight = 'none';
+        mainNav.style.overflow = 'visible';
+        mainNav.style.opacity = '1';
+        icon.className = 'fas fa-bars';
+      }
+    }
+    
+    window.addEventListener('resize', resetNav);
+    resetNav();
+
+    // Enhanced: Improved theme toggle with better icon handling
+    const toggleMode = document.getElementById('toggleMode');
+    const themeIcon = document.getElementById('themeIcon');
+    
+    // Enhanced: Load saved theme preference
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.body.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+
+    toggleMode && toggleMode.addEventListener('click', () => {
+      const currentTheme = document.body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      document.body.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme); // Enhanced: Save preference
+      updateThemeIcon(newTheme);
+      
+      // Enhanced: Add a subtle animation effect
+      document.body.style.transition = 'all 0.3s ease';
+      setTimeout(() => {
+        document.body.style.transition = '';
+      }, 300);
+    });
+
+    // Enhanced: Function to update theme icon
+    function updateThemeIcon(theme) {
+      if (themeIcon) {
+        themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+      }
+    }
+
+    // Enhanced: Improved typing animation with better performance
+    (function typingAnimation() {
+      const output = document.getElementById('site-sub');
+      if (!output) return;
+      
+      const phrases = [
+        "Ma'am Razel — Grade 8 Social Studies",
+        "Dedicated Teacher & Educator",
+        "Class Adviser Phoenix Section",
+        "Lifelong Learner",
+        "Building Future Leaders"
+      ];
+      
+      let phraseIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      let typingSpeed = 100;
+      
+      function typeEffect() {
+        const currentPhrase = phrases[phraseIndex];
+        
+        if (isDeleting) {
+          output.textContent = currentPhrase.substring(0, charIndex - 1) + '|';
+          charIndex--;
+          typingSpeed = 50;
+        } else {
+          output.textContent = currentPhrase.substring(0, charIndex + 1) + '|';
+          charIndex++;
+          typingSpeed = 100;
+        }
+        
+        if (!isDeleting && charIndex === currentPhrase.length) {
+          typingSpeed = 2000; // Enhanced: Pause at end
+          isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          typingSpeed = 500; // Enhanced: Pause before new phrase
+        }
+        
+        setTimeout(typeEffect, typingSpeed);
+      }
+      
+      typeEffect();
+    })();
+
+    // Enhanced: ARAL resources with improved search and filtering
+    const aralResources = [
+      {
+        title: "ARAL Reading: Key Stage 1 Foundation",
+        category: "Literacy Workbook",
+        type: "passage",
+        level: "beginner",
+        subject: "Reading Comprehension",
+        tags: ["decoding", "phonics", "basic reading"],
+        description: "Foundational reading skills for beginning learners",
+        file: "resources/aral/passages/aral-passage-01.pdf"
+      },
+      {
+        title: "ARAL Reading: Key Stage 2 Development",
+        category: "Comprehension Workbook",
+        type: "worksheet",
+        level: "intermediate",
+        subject: "Reading Strategies",
+        tags: ["comprehension", "vocabulary", "critical thinking"],
+        description: "Intermediate reading comprehension exercises",
+        file: "resources/aral/worksheets/aral-worksheet-02.pdf"
+      },
+      {
+        title: "ARAL Reading: Key Stage 3 Mastery",
+        category: "Advanced Practice",
+        type: "slides",
+        level: "advanced",
+        subject: "Literary Analysis",
+        tags: ["analysis", "interpretation", "advanced skills"],
+        description: "Advanced reading analysis and interpretation",
+        file: "resources/aral/slides/aral-worksheet-03.pdf"
+      },
+      {
+        title: "ARAL Teachers Comprehensive Guide",
+        category: "Instructor Manual",
+        type: "audio",
+        level: "intermediate",
+        subject: "Teaching Methodology",
+        tags: ["instruction", "methodology", "teacher guide"],
+        description: "Complete guide for ARAL program implementation",
+        file: "resources/aral/audio/aral-teachers_guide-01.pdf"
+      },
+      {
+        title: "ARAL Assessment Rubrics",
+        category: "Evaluation Tools",
+        type: "worksheet",
+        level: "beginner",
+        subject: "Assessment",
+        tags: ["rubrics", "evaluation", "progress tracking"],
+        description: "Assessment tools for measuring student progress",
+        file: "resources/aral/assessment/aral-rubrics-01.pdf"
+      }
+    ];
+
+    // Enhanced: Utility functions
+    function capitalize(str) { 
+      return str.charAt(0).toUpperCase() + str.slice(1); 
+    }
+
+    function getTypeIcon(type) {
+      const icons = {
+        passage: '📖',
+        worksheet: '📝',
+        slides: '🎯',
+        audio: '🎵'
+      };
+      return icons[type] || '📄';
+    }
+
+    function getLevelColor(level) {
+      const colors = {
+        beginner: 'var(--accent-success)',
+        intermediate: 'var(--accent-warning)',
+        advanced: 'var(--accent-primary)'
+      };
+      return colors[level] || 'var(--text-muted)';
+    }
+
+    // Enhanced: Improved resource rendering with better UI
+    function renderAralResources(resourceList) {
+      const grid = document.getElementById('resGrid');
+      if (!grid) return;
+      
+      grid.innerHTML = '';
+      
+      if (!resourceList.length) {
+        grid.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 3rem; color: var(--text-muted);">
+            <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+            <h3>No matching resources found</h3>
+            <p>Try adjusting your search terms or filters</p>
+          </div>
+        `;
+        return;
+      }
+      
+      resourceList.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'res-card';
+        card.innerHTML = `
+          <h3>${getTypeIcon(item.type)} ${item.title}</h3>
+          <div class="res-meta">
+            ${item.subject} • 
+            <span style="color: ${getLevelColor(item.level)}; font-weight: 600;">
+              ${capitalize(item.level)}
+            </span> • 
+            ${capitalize(item.type)}
+          </div>
+          <p style="color: var(--text-secondary); margin: 1rem 0; font-size: 0.9rem; line-height: 1.5;">
+            ${item.description}
+          </p>
+          <div class="res-tags">
+            <span class="res-tag" style="background: var(--accent-primary); color: white;">
+              ${capitalize(item.category)}
+            </span>
+            ${item.tags.map(tag => 
+              `<span class="res-tag">${tag}</span>`
+            ).join('')}
+          </div>
+          <div class="res-actions">
+            <a href="${item.file}" target="_blank" rel="noopener">
+              <i class="fas fa-external-link-alt"></i> Open Resource
+            </a>
+            ${item.file.endsWith('.pdf') ? 
+              `<a href="${item.file}" download>
+                <i class="fas fa-download"></i> Download
+              </a>` : ''
+            }
+          </div>
+        `;
+        
+        // Enhanced: Add entrance animation
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        grid.appendChild(card);
+        
+        // Trigger animation
+        setTimeout(() => {
+          card.style.transition = 'all 0.4s ease';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, 50);
+      });
+    }
+
+    // Enhanced: Improved filtering with debouncing
+    let filterTimeout;
+    function applyFilters() {
+      clearTimeout(filterTimeout);
+      filterTimeout = setTimeout(() => {
+        const query = (document.getElementById('resSearch')?.value || '').toLowerCase().trim();
+        const type = document.getElementById('resType')?.value || 'all';
+        const level = document.getElementById('resLevel')?.value || 'all';
+        const activeCatBtn = document.querySelector('.res-cats .cat.active');
+        const category = activeCatBtn ? activeCatBtn.dataset.cat : 'all';
+
+        const filteredResources = aralResources.filter(resource => {
+          const matchesQuery = !query || 
+            resource.title.toLowerCase().includes(query) ||
+            resource.subject.toLowerCase().includes(query) ||
+            resource.description.toLowerCase().includes(query) ||
+            resource.tags.some(tag => tag.toLowerCase().includes(query));
+          
+          const matchesType = (type === 'all') || (resource.type === type);
+          const matchesLevel = (level === 'all') || (resource.level === level);
+          const matchesCategory = (category === 'all') || 
+            (resource.category.toLowerCase().includes(category.toLowerCase()));
+          
+          return matchesQuery && matchesType && matchesLevel && matchesCategory;
+        });
+
+        renderAralResources(filteredResources);
+      }, 300); // Enhanced: Debounce search
+    }
+
+    // Enhanced: Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          const headerHeight = document.querySelector('.header').offsetHeight + 20;
+          const targetPosition = target.offsetTop - headerHeight;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+          
+          // Enhanced: Close mobile menu after clicking
+          if (window.innerWidth <= 768) {
+            mainNav.style.maxHeight = '0px';
+            mainNav.style.opacity = '0';
+            menuToggle.querySelector('i').className = 'fas fa-bars';
+          }
+        }
+      });
+    });
+
+    // Enhanced: Initialize everything when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      // Wire up filter controls
+      const searchInput = document.getElementById('resSearch');
+      const typeSelect = document.getElementById('resType');
+      const levelSelect = document.getElementById('resLevel');
+      
+      searchInput?.addEventListener('input', applyFilters);
+      typeSelect?.addEventListener('change', applyFilters);
+      levelSelect?.addEventListener('change', applyFilters);
+
+      // Enhanced: Category button handling
+      const categoriesContainer = document.getElementById('resCats');
+      if (categoriesContainer) {
+        categoriesContainer.addEventListener('click', (e) => {
+          const button = e.target.closest('.cat');
+          if (!button) return;
+          
+          // Remove active class from all buttons
+          categoriesContainer.querySelectorAll('.cat').forEach(btn => 
+            btn.classList.remove('active')
+          );
+          
+          // Add active class to clicked button
+          button.classList.add('active');
+          
+          // Apply filters
+          applyFilters();
+        });
+      }
+
+      // Enhanced: Initial render
+      renderAralResources(aralResources);
+      
+      // Enhanced: Add loading animation to sections
+      const sections = document.querySelectorAll('.section');
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animation = 'fadeInUp 0.6s ease-out';
+          }
+        });
+      }, observerOptions);
+      
+      sections.forEach(section => {
+        sectionObserver.observe(section);
+      });
+    });
+
+    // Enhanced: Add some interactive particles effect (optional)
+    function createParticle() {
+      if (Math.random() > 0.95) { // Only occasionally create particles
+        const particle = document.createElement('div');
+        particle.style.position = 'fixed';
+        particle.style.width = '4px';
+        particle.style.height = '4px';
+        particle.style.background = 'var(--accent-primary)';
+        particle.style.borderRadius = '50%';
+        particle.style.opacity = '0.3';
+        particle.style.pointerEvents = 'none';
+        particle.style.zIndex = '1';
+        particle.style.left = Math.random() * window.innerWidth + 'px';
+        particle.style.top = window.innerHeight + 'px';
+        
+        document.body.appendChild(particle);
+        
+        // Animate particle
+        const duration = 3000 + Math.random() * 2000;
+        particle.animate([
+          { transform: 'translateY(0px)', opacity: 0.3 },
+          { transform: `translateY(-${window.innerHeight + 100}px)`, opacity: 0 }
+        ], {
+          duration: duration,
+          easing: 'linear'
+        }).onfinish = () => {
+          particle.remove();
+        };
+      }
+    }
+
+    // Enhanced: Start particle effect (very subtle)
+    setInterval(createParticle, 2000);
+  </script>
+</body>
+</html>
