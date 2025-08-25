@@ -3,7 +3,7 @@
 > Modern, interactive portfolio website for Grade 8 Social Studies educator featuring educational resources, ARAL reading program materials, and classroom management tools.
 
 ## 🎯 Live Demo
-**[View Live Website](https://yourusername.github.io/repository-name)**
+**[View Live Website](https://money4money.github.io/ma-am-Razel/)**
 
 ## 📖 About
 Professional portfolio website for **Ma'am Razel**, a dedicated Social Studies teacher at San Miguel National High School, Leyte. This site serves as a comprehensive resource hub for students, parents, and educational professionals.
