@@ -5,13 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Room 8 Chronicles — Ma'am Razel</title>
   
-  <!-- Enhanced: Added Google Fonts for better typography -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <!-- Enhanced: Font Awesome icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
   <style>
-    /* Enhanced: Modern CSS Custom Properties with expanded color palette */
     :root {
       --bg-primary: #fafafb;
       --bg-secondary: #ffffff;
@@ -34,7 +32,6 @@
       --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* Enhanced: Dark mode with better contrast ratios */
     [data-theme="dark"] {
       --bg-primary: #0f0f23;
       --bg-secondary: #1a1a2e;
@@ -51,26 +48,24 @@
       --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
     }
 
-    /* Enhanced: Modern reset and base styles */
     * {
       box-sizing: border-box;
     }
 
     body {
       margin: 0;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; /* Enhanced: Better font stack */
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       font-size: 16px;
       line-height: 1.6;
       background: var(--bg-primary);
       color: var(--text-primary);
       transition: var(--transition);
-      overflow-x: hidden; /* Enhanced: Prevent horizontal scroll */
+      overflow-x: hidden;
     }
 
-    /* Enhanced: Improved header with glassmorphism effect */
     header.header {
       background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(20px); /* Enhanced: Glassmorphism */
+      backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border-light);
       color: var(--text-primary);
@@ -89,7 +84,6 @@
       border-bottom-color: var(--border-light);
     }
 
-    /* Enhanced: Animated header title */
     .header h1 {
       margin: 0;
       font-size: 1.75rem;
@@ -100,16 +94,14 @@
       background-clip: text;
     }
 
-    /* Enhanced: Animated subtitle with typing cursor */
     #site-sub {
       font-size: 0.95rem;
       color: var(--text-muted);
       font-family: 'JetBrains Mono', monospace;
       margin-top: 0.25rem;
-      min-height: 1.2em; /* Enhanced: Prevent layout jump */
+      min-height: 1.2em;
     }
 
-    /* Enhanced: Interactive header actions */
     .header-actions {
       display: flex;
       gap: 0.75rem;
@@ -131,10 +123,9 @@
     .header-actions button:hover {
       background: var(--bg-tertiary);
       color: var(--accent-primary);
-      transform: translateY(-1px); /* Enhanced: Subtle hover animation */
+      transform: translateY(-1px);
     }
 
-    /* Enhanced: Modern navigation with smooth animations */
     .nav {
       background: var(--bg-secondary);
       border-bottom: 1px solid var(--border-light);
@@ -185,14 +176,12 @@
       left: 100%;
     }
 
-    /* Enhanced: Modern main content layout */
     main {
       padding: 3rem 2rem;
       max-width: 1200px;
       margin: 0 auto;
     }
 
-    /* Enhanced: Beautiful section cards with modern shadows */
     .section {
       background: var(--bg-secondary);
       margin-bottom: 3rem;
@@ -234,7 +223,6 @@
       position: relative;
     }
 
-    /* Enhanced: Improved tables with modern styling */
     table {
       width: 100%;
       border-collapse: collapse;
@@ -263,7 +251,6 @@
       background: var(--bg-tertiary);
     }
 
-    /* Enhanced: Interactive resource controls */
     .res-controls {
       display: flex;
       flex-wrap: wrap;
@@ -294,7 +281,6 @@
       box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
     }
 
-    /* Enhanced: Category buttons with active states */
     .res-cats {
       display: flex;
       flex-wrap: wrap;
@@ -326,7 +312,6 @@
       box-shadow: var(--shadow-md);
     }
 
-    /* Enhanced: Beautiful resource grid */
     .res-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -429,7 +414,6 @@
       border-color: var(--accent-primary);
     }
 
-    /* Enhanced: Gallery section with image placeholders */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -473,7 +457,6 @@
       margin-bottom: 1rem;
     }
 
-    /* Enhanced: Footer with modern styling */
     footer {
       text-align: center;
       padding: 3rem 2rem;
@@ -483,7 +466,6 @@
       margin-top: 4rem;
     }
 
-    /* Enhanced: Responsive design improvements */
     @media (max-width: 768px) {
       .header {
         padding: 1rem 1.5rem;
@@ -526,12 +508,10 @@
       }
     }
 
-    /* Enhanced: Smooth scroll behavior */
     html {
       scroll-behavior: smooth;
     }
 
-    /* Enhanced: Focus styles for accessibility */
     button:focus-visible,
     a:focus-visible,
     input:focus-visible,
@@ -540,7 +520,6 @@
       outline-offset: 2px;
     }
 
-    /* Enhanced: Loading animation */
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -556,7 +535,6 @@
       animation: fadeInUp 0.6s ease-out;
     }
 
-    /* Enhanced: Typing cursor animation */
     .typing-cursor {
       display: inline-block;
       background-color: var(--accent-primary);
@@ -573,15 +551,13 @@
 
 <body data-theme="light">
 
-  <!-- Enhanced: Header with improved styling -->
   <header class="header">
     <div>
       <h1>Room 8 Chronicles</h1>
-      <div id="site-sub">Ma'am Razel — Grade 8 Social Studies</div>
+      <div id="site-sub">Ma'am Razel — Grade 8 Social Studies Teacher</div>
     </div>
 
     <div class="header-actions">
-      <!-- Enhanced: Better theme toggle icon -->
       <button id="toggleMode" title="Toggle theme">
         <i class="fas fa-moon" id="themeIcon"></i>
       </button>
@@ -591,7 +567,6 @@
     </div>
   </header>
 
-  <!-- Enhanced: Navigation with improved UX -->
   <nav class="nav" id="mainNav">
     <ul>
       <li><a href="#about"><i class="fas fa-user"></i> About Me</a></li>
@@ -608,27 +583,24 @@
   </nav>
 
   <main>
-    <!-- Enhanced: About section with better content presentation -->
     <section id="about" class="section">
       <h2><i class="fas fa-user-circle"></i> About Me</h2>
-      <p>Hello! I'm Ma'am Razel, a passionate Social Studies teacher at San Miguel National High School in Leyte. For the past 7 years, I've been teaching Grade 8 Araling Panlipunan, helping students explore Philippine history, government, economics, and our country's role in the world.</p>
+      <p>Hello! I'm Ma'am Razel, a passionate Social Studies teacher at San Miguel National High School in Leyte. For the past 7 years, I've been teaching Grade 8 Araling Panlipunan, helping students explore World history, government, geography, economics, and our country's role in the world.</p>
       <p>I believe Social Studies is not just memorizing facts — it's learning how to connect the past with the present. I aim to make lessons engaging, relevant, and full of heart.</p>
       <p>I create a classroom where students feel heard, respected, and inspired to learn. Teaching is my vocation.</p>
     </section>
 
-    <!-- Enhanced: Timeline with better visual presentation -->
     <section id="timeline" class="section">
       <h2><i class="fas fa-history"></i> My Teaching Timeline</h2>
       <ul style="list-style: none; padding: 0;">
         <li style="margin: 1rem 0; padding: 1rem; background: var(--bg-tertiary); border-radius: var(--radius-sm); border-left: 4px solid var(--accent-primary);"><strong>2018</strong> – Started teaching at SMNHS</li>
-        <li style="margin: 1rem 0; padding: 1rem; background: var(--bg-tertiary); border-radius: var(--radius-sm); border-left: 4px solid var(--accent-primary);"><strong>2019</strong> – Mentored 3 student achievers</li>
+        <li style="margin: 1rem 0; padding: 1rem; background: var(--bg-tertiary); border-radius: var(--radius-sm); border-left: 4px solid var(--accent-primary);"><strong>2019</strong> – Mentored student achievers</li>
         <li style="margin: 1rem 0; padding: 1rem; background: var(--bg-tertiary); border-radius: var(--radius-sm); border-left: 4px solid var(--accent-primary);"><strong>2020</strong> – Shifted to remote learning during pandemic</li>
         <li style="margin: 1rem 0; padding: 1rem; background: var(--bg-tertiary); border-radius: var(--radius-sm); border-left: 4px solid var(--accent-primary);"><strong>2024</strong> – Started classroom teacher adviser</li>
         <li style="margin: 1rem 0; padding: 1rem; background: var(--bg-tertiary); border-radius: var(--radius-sm); border-left: 4px solid var(--accent-primary);"><strong>2025</strong> – Classroom projects and improvements</li>
       </ul>
     </section>
 
-    <!-- Enhanced: Schedule with improved table styling -->
     <section id="schedule" class="section">
       <h2><i class="fas fa-calendar-alt"></i> My Schedule SY 2025–2026</h2>
       <table>
@@ -643,83 +615,58 @@
       <p><strong>Class & consultation hours:</strong> 10:30–11:00 AM. Contact via social media: <a href="https://www.instagram.com/magicwind888" target="_blank">@magicwind888</a></p>
     </section>
 
-    <!-- Phoenix section remains the same -->
     <section id="phoenix" class="section">
       <h2><i class="fas fa-graduation-cap"></i> Class Phoenix Schedule SY 2025–2026</h2>
       <table>
         <tr><th>Day</th><th>Subject</th><th>Time</th><th>Teacher</th></tr>
         <tr><td>Mon–Fri</td><td>AP</td><td>8:00–8:45</td><td>Ma'am Razel</td></tr>
         <tr><td>Mon–Fri</td><td>MAPEH</td><td>8:45–9:30</td><td>Ma'am Angel</td></tr>
-        <tr><td>Mon–Fri</td><td>Aral Math</td><td>9:45–10:30</td><td>Sir AJ</td></tr>
+        <tr><td>Mon–Fri</td><td>Math</td><td>9:45–10:30</td><td>Ma'am Tan</td></tr>
         <tr><td>Mon–Fri</td><td>English</td><td>10:30–11:15</td><td>Ma'am Rose</td></tr>
-        <tr><td>Mon–Fri</td><td>Math</td><td>11:15–12:00</td><td>Ma'am Melissa</td></tr>
+        <tr><td>Mon–Fri</td><td>TLE</td><td>11:15–12:00</td><td>Sir Mach</td></tr>
         <tr><td>Mon–Fri</td><td>Filipino</td><td>1:00–1:45</td><td>Ma'am Rhea</td></tr>
         <tr><td>Mon–Fri</td><td>ESP</td><td>1:45–2:30</td><td>Ma'am Razel</td></tr>
         <tr><td>Mon–Fri</td><td>Science</td><td>2:30–3:15</td><td>Ma'am Rhoda</td></tr>
-        <tr><td>Mon–Fri</td><td>TLE</td><td>3:15–4:00</td><td>Sir Mach</td></tr>
+        <tr><td>Mon–Fri</td><td>ARAL</td><td>3:15–4:00</td><td>Ma'am Anna</td></tr>
       </table>
     </section>
 
-    <!-- Enhanced: Gallery section with image examples -->
     <section id="gallery" class="section">
-      <h2><i class="fas fa-camera"></i> Classroom Gallery</h2>
-      <p>Capturing moments from our learning journey together.</p>
-      
-      <div class="gallery-grid">
-        <!-- Enhanced: Example image placeholders with instructions -->
-        <div class="gallery-item">
-          <!-- Replace the div below with: <img src="images/classroom-photo-1.jpg" alt="Classroom environment"> -->
-          <div class="placeholder">
-            <i class="fas fa-image"></i>
-            <p>Classroom Environment</p>
-            <small>Add: images/classroom-1.jpg</small>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <!-- Replace with: <img src="images/students-activity.jpg" alt="Students during activity"> -->
-          <div class="placeholder">
-            <i class="fas fa-users"></i>
-            <p>Student Activities</p>
-            <small>Add: images/students-1.jpg</small>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <!-- Replace with: <img src="images/teacher-moment.jpg" alt="Teaching moment"> -->
-          <div class="placeholder">
-            <i class="fas fa-chalkboard-teacher"></i>
-            <p>Teaching Moments</p>
-            <small>Add: images/teaching-1.jpg</small>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <!-- Replace with: <img src="images/student-work.jpg" alt="Student work display"> -->
-          <div class="placeholder">
-            <i class="fas fa-award"></i>
-            <p>Student Achievements</p>
-            <small>Add: images/achievements-1.jpg</small>
-          </div>
-        </div>
+     <h2><i class="fas fa-camera"></i> Classroom Gallery</h2>
+     <p>Capturing moments from our learning journey together.</p>
+     <div class="gallery-grid">
+      <div class="gallery-item">
+       <img src="images/Phoenix_Library.jpg" alt="My Grade 8 Phoenix classroom Mini Library">
+    </div>
+    
+     <div class="gallery-item">
+      <img src="images/First_Quarter_Examination.jpg" alt="Students engaged in learning Quarterly Assessment">
+    </div>
+
+     <div class="gallery-item">
+       <img src="images/Celebrate.jpg" alt="My birthday with them">
+     </div>
+     <div class="gallery-item">
+       <img src="images/Checking_APNotes.jpg" alt="One of my students made me smile">
+     </div>
+
+      <div class="gallery-item">
+        <img src="images/Flex_Uniform.jpg" alt="New sets of Uniforms by DepEd">
       </div>
-      
-      <!-- Enhanced: Image upload instructions -->
-      <div style="margin-top: 2rem; padding: 1.5rem; background: var(--bg-tertiary); border-radius: var(--radius-md); border-left: 4px solid var(--accent-warning);">
-        <h4><i class="fas fa-info-circle"></i> How to Add Images:</h4>
-        <ol>
-          <li>Create an <code>images/</code> folder in your GitHub repository</li>
-          <li>Upload your .jpg/.png files to this folder</li>
-          <li>Commit and push: <code>git add images/ && git commit -m "Add images" && git push</code></li>
-          <li>Replace the placeholder divs above with <code>&lt;img src="images/yourfile.jpg" alt="description"&gt;</code></li>
-        </ol>
+      <div class="gallery-item">
+        <div class="placeholder">
+          <i class="fas fa-plus-circle"></i>
+          <p>More Photos Coming Soon</p>
+        <small>Upload to: images/photo3.jpg</small>
       </div>
+    </div>    
     </section>
 
-    <!-- Resources sections remain largely the same with enhanced styling -->
     <section id="resources" class="section">
       <h2><i class="fas fa-book-open"></i> Learning Resources</h2>
       <p>Slides, worksheets, activities, and helpful tools for students. Use the ARAL section below for program-specific materials.</p>
     </section>
-
-    <!-- Enhanced: ARAL resources with improved functionality -->
+    
     <section id="resources-aral" class="section">
       <h2><i class="fas fa-book-reader"></i> Learning Resources — ARAL Reading Program</h2>
 
@@ -761,7 +708,6 @@
       </div>
     </section>
 
-    <!-- Enhanced: Textbooks section -->
     <section id="textbooks" class="section">
       <h2><i class="fas fa-bookmark"></i> Textbooks</h2>
       <p>Digital and suggested textbooks available for download or preview.</p>
@@ -775,14 +721,13 @@
             <span class="res-tag">DepEd Approved</span>
           </div>
           <div class="res-actions">
-            <a href="#" onclick="alert('Add your textbook PDF link here')">📖 View Online</a>
-            <a href="#" onclick="alert('Add download link here')">⬇️ Download</a>
+             <a href="https://www.canva.com/design/DAGxDgMUupQ/i8nAPvUcg3QjGWNMyM-w-w/view" target="_blank">📖 View Online</a>
+             <a href="https://depedph-my.sharepoint.com/:b:/g/personal/razelann_anover_deped_gov_ph/EefEq9OTNeJJkwlXrRgTNkEB3sP_A2IOoE4zPz0SCJlUww?download=1" download>⬇️ Download</a>
           </div>
         </div>
       </div>
-    </section>
+     </section>
 
-    <!-- Enhanced: Professional Development section -->
     <section id="development" class="section">
       <h2><i class="fas fa-chart-line"></i> Professional Development</h2>
       <p>Trainings, certificates, and short notes from courses I attended.</p>
@@ -803,7 +748,6 @@
       </div>
     </section>
 
-    <!-- Enhanced: Contact section -->
     <section id="contact" class="section">
       <h2><i class="fas fa-envelope"></i> Contact</h2>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 1.5rem;">
@@ -826,7 +770,6 @@
     </section>
   </main>
 
-  <!-- Enhanced: Footer with additional information -->
   <footer>
     <div style="max-width: 1200px; margin: 0 auto;">
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: left; margin-bottom: 2rem;">
@@ -852,10 +795,7 @@
       </div>
     </div>
   </footer>
-
-  <!-- Enhanced: JavaScript with improved functionality -->
   <script>
-    // Enhanced: Improved menu toggle with smooth animations
     const menuToggle = document.getElementById('menuToggle');
     const mainNav = document.getElementById('mainNav');
     
@@ -864,15 +804,14 @@
       if (mainNav.style.maxHeight && mainNav.style.maxHeight !== '0px') {
         mainNav.style.maxHeight = '0px';
         mainNav.style.opacity = '0';
-        icon.className = 'fas fa-bars'; // Enhanced: Icon changes
+        icon.className = 'fas fa-bars'; 
       } else {
         mainNav.style.maxHeight = mainNav.scrollHeight + 'px';
         mainNav.style.opacity = '1';
-        icon.className = 'fas fa-times'; // Enhanced: Icon changes
+        icon.className = 'fas fa-times';
       }
     });
 
-    // Enhanced: Responsive navigation with better UX
     function resetNav() {
       const icon = menuToggle.querySelector('i');
       if (window.innerWidth <= 768) {
@@ -892,11 +831,9 @@
     window.addEventListener('resize', resetNav);
     resetNav();
 
-    // Enhanced: Improved theme toggle with better icon handling
     const toggleMode = document.getElementById('toggleMode');
     const themeIcon = document.getElementById('themeIcon');
     
-    // Enhanced: Load saved theme preference
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.body.setAttribute('data-theme', savedTheme);
     updateThemeIcon(savedTheme);
@@ -906,24 +843,24 @@
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       
       document.body.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme); // Enhanced: Save preference
+      localStorage.setItem('theme', newTheme); 
       updateThemeIcon(newTheme);
       
-      // Enhanced: Add a subtle animation effect
+  
       document.body.style.transition = 'all 0.3s ease';
       setTimeout(() => {
         document.body.style.transition = '';
       }, 300);
     });
 
-    // Enhanced: Function to update theme icon
+  
     function updateThemeIcon(theme) {
       if (themeIcon) {
         themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
       }
     }
 
-    // Enhanced: Improved typing animation with better performance
+    
     (function typingAnimation() {
       const output = document.getElementById('site-sub');
       if (!output) return;
@@ -1222,7 +1159,6 @@
       });
     });
 
-    // Enhanced: Add some interactive particles effect (optional)
     function createParticle() {
       if (Math.random() > 0.95) { // Only occasionally create particles
         const particle = document.createElement('div');
@@ -1239,7 +1175,7 @@
         
         document.body.appendChild(particle);
         
-        // Animate particle
+        
         const duration = 3000 + Math.random() * 2000;
         particle.animate([
           { transform: 'translateY(0px)', opacity: 0.3 },
@@ -1253,7 +1189,6 @@
       }
     }
 
-    // Enhanced: Start particle effect (very subtle)
     setInterval(createParticle, 2000);
   </script>
 </body>
